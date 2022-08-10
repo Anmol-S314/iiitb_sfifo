@@ -58,7 +58,6 @@ cd iiitb_sync_fifo
 iverilog iiitb_sync_fifo.v iiitb_sync_fifo_tb.v
 vvp a.out
 gtkwave FIFO_tb.vcd
-
 ```
 ## Functional Characteristics
 <p align="center">
