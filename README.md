@@ -61,15 +61,63 @@ gtkwave FIFO_tb.vcd
 ```
 ## Functional Characteristics
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/183829473-5327f50f-01a2-4e6f-8fb3-f1e1be99b2fd.png" width="700" alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/185180587-6ec8ecae-640a-4bf4-963b-7a9253ec57a0.png" width="700" alt="accessibility text">
 </p>
 <p align="center">
     <em>Simulation Results of FIFO</em>
 </p>
 
 ## Synthesis of Verilog Code
+### Synthesis
+Synthesis transforms the simple RTL design into a gate-level netlist with all the constraints as specified by the designer. In simple language, Synthesis is a process that converts the abstract form of design to a properly implemented chip in terms of logic gates. We can realize this with a Synthesizer, in our case Yosys is used.
+
+Synthesis takes place in multiple steps:
+
+- Converting RTL into simple logic gates.
+- Mapping those gates to actual technology-dependent logic gates available in the technology libraries.
+- Optimizing the mapped netlist keeping the constraints set by the designer intact.
+
 ### About Yosys
 Yosys is a framework for Verilog RTL synthesis. It currently has extensive Verilog-2005 support and provides a basic set of synthesis algorithms for various application domains.
+To install yosys follow the instructions in this github repository
+
+https://github.com/YosysHQ/yosys
+
+Now simply run the ```yosys_run.sh``` file which creates the synthesized version of the verilog code.
+
+**To synthesize:**
+```
+yosys
+yosys>  script yosys_run.sh
+```
+**To obtain different cell types:**
+```
+yosys>  stat
+```
+**To generate schematic:**
+```
+yosys>  show
+```
+Now the synthesized netlist is written in ```iiitb_sync_fifo_synth.v``` file.
+
+## Gate Level Simulation
+GLS is generating the simulation output by running test bench with netlist file generated from synthesis as design under test. Netlist is logically same as RTL code, therefore, same test bench can be used for it.
+We perform this to verify logical correctness of the design after synthesizing it. Also ensuring the timing of the design is met. Folllowing are the commands to run the GLS simulation:
+```
+iverilog -DFUNCTIONAL -DUNIT_DELAY=#0 ../iiitb_sync_fifo/verilog_model/primitives.v ../iiitb_sync_fifo/verilog_model/sky130_fd_sc_hd.v iiitb_sync_fifo_synth.v iiitb_sync_fifo_tb.v
+./a.out
+gtkwave dump.vcd
+```
+The gtkwave output for the netlist should match the output waveform for the RTL design file. As netlist and design code have same set of inputs and outputs, we can use the same testbench and compare the waveforms.
+The output of the synthesized netlist is given below:
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/78084271/185180920-e2caf509-1c0e-4ab8-8f8a-b95de4023cce.png" width="700" alt="accessibility text">
+</p>
+<p align="center">
+    <em>Waveform of Synthesized Netlist</em>
+</p>
+
+
 
 ## Contributors
 - **Anmol J Shetty**
@@ -79,7 +127,8 @@ Yosys is a framework for Verilog RTL synthesis. It currently has extensive Veril
 - Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
 
 ## Contact Information
-- Anmol J Shetty, Student at International Institute of Information Technology Bangalore.
+- Anmol J Shetty, Student at International Institute
+of Information Technology Bangalore.
 _Email_: Anmol.Shetty@iiitb.ac.in
 - Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
 _Email_: kunalghosh@gmail.com
