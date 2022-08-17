@@ -98,6 +98,14 @@ yosys>  stat
 ```
 yosys>  show
 ```
+### Printing Statistics
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/78084271/185193728-2cea97a5-c2a5-406a-bbff-dc6ad67af0eb.png" width="300" alt="accessibility text">
+</p>
+<p align="center">
+    <em>Gate Level Description of Verilog Code</em>
+</p>
+
 Now the synthesized netlist is written in ```iiitb_sync_fifo_synth.v``` file.
 
 ## Gate Level Simulation
