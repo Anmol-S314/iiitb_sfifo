@@ -1,91 +1,54 @@
-`define WIDTH 3    // SIZE = 16 -> WIDTH = 4
-`define SIZE ( 1<<`WIDTH )
-//Synchronous FIFO 
 
-module FIFO( 
-			input  rst, clk, wr_en, rd_en,   
-			input  [7:0] in,                   
-			output reg [7:0] out,                  
-			output reg empty, full, part_empt, part_full,      
-			output reg [`WIDTH :0] fifo_counter);             
-   
-  reg [`WIDTH -1:0]  rd_ptr, wr_ptr; // pointer to read and write addresses  
-  reg [7:0] mem [`SIZE -1 : 0]; 
+`timescale 1 ns/ 1 ps
+module iiitb_sync_fifo(
+	input        CLK,
+	input        RSTn,
+	input        write,
+	input        read,
+	input  [7:0] iData,
+	
+	output [7:0] oData,
+	output       full,
+	output       empty
+);
 
-    //setting full, partial full, empty, partial empty
-	always @(fifo_counter)
+reg [4:0] wp;          //write point should add 1 bit(N+1) 
+reg [4:0] rp;          //read point
+reg [7:0] RAM [15:0];  //deep16,8 bit RAM
+reg [7:0] oData_reg;   //regsiter of oData
+
+always @ ( posedge CLK or negedge RSTn )
+begin                  //write to RAM
+	if (!RSTn)
 	begin
-	   empty     = (fifo_counter==0);   
-	   full      = (fifo_counter== `SIZE); 
-	   part_empt = (fifo_counter==2);
-	   part_full = (fifo_counter==`SIZE-2);
+		wp <= 5'b0;
 	end
-
-	//fifo counter operations
-	always @(posedge clk or posedge rst)
+	else if ( write )
 	begin
-	   if( rst )
-		   fifo_counter <= 0;		
-
-	   else if( (!full && wr_en) && ( !empty && rd_en ) ) 
-		   fifo_counter <= fifo_counter;			
-
-	   else if( !full && wr_en )			
-		   fifo_counter <= fifo_counter + 1;
-
-	   else if( !empty && rd_en )		
-		   fifo_counter <= fifo_counter - 1;
-
-	   else
-		   fifo_counter <= fifo_counter;			
+		RAM[wp[3:0]] <= iData;
+		wp <= wp + 1'b1;
 	end
+end
 
-	//read operation
-	always @( posedge clk or posedge rst)
+always @ ( posedge CLK or negedge RSTn )
+begin                  // read from RAM
+	if (!RSTn)
 	begin
-	   if( rst )
-		  out <= 0;		
-	   else
-	   begin
-		  if( rd_en && !empty )
-			 out <= mem[rd_ptr];	
-
-		  else
-			 out <= out;		
-
-	   end
+		rp <= 5'b0;
+		oData_reg <= 8'b0;
 	end
-
-
-	//write opration
-	always @(posedge clk)
+	else if ( read  )
 	begin
-	   if( wr_en && !full )
-		  mem[ wr_ptr ] <= in;		
-
-	   else
-		  mem[ wr_ptr ] <= mem[ wr_ptr ];
+		oData_reg <= RAM[rp[3:0]];
+		rp <= rp + 1'b1;
 	end
+end
 
-	//read and write pointer operation
-	always@(posedge clk or posedge rst)
-	begin
-	   if( rst )
-	   begin
-		  wr_ptr <= 0;		
-		  rd_ptr <= 0;		
-	   end
-	   else
-	   begin
-		  if( !full && wr_en )    
-				wr_ptr <= wr_ptr + 1;		
-		  else  
-				wr_ptr <= wr_ptr;
 
-		  if( !empty && rd_en )   
-				rd_ptr <= rd_ptr + 1;		
-		  else 
-				rd_ptr <= rd_ptr;
-	   end
-	end
+assign full = ( wp[4] ^ rp[4] & wp[3:0] == rp[3:0] );
+assign empty = ( wp == rp );
+assign oData = oData_reg;
+
+
 endmodule
+
