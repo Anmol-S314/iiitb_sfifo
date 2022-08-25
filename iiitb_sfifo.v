@@ -1,6 +1,6 @@
 
 `timescale 1 ns/ 1 ps
-module iiitb_sync_fifo(
+module iiitb_sfifo(
 	input        CLK,
 	input        RSTn,
 	input        write,
