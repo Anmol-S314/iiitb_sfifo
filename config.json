@@ -1,0 +1,15 @@
+{
+    "DESIGN_NAME": "iiitb_sfifo",
+    "VERILOG_FILES": "dir::src/iiitb_sfifo.v",
+    "CLOCK_PORT": "clk",
+    "CLOCK_NET": "clk",
+    "FP_SIZING": "absolute",
+    "DIE_AREA": "0 0 80 80",
+    "pdk::sky130*": {
+        "FP_CORE_UTIL": 50,
+        "CLOCK_PERIOD": 65,
+        "scl::sky130_fd_sc_hd": {
+            "FP_CORE_UTIL": 50
+        }
+    }
+}
