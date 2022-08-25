@@ -53,9 +53,9 @@ sudo apt-get install iverilog gtkwave
 To clone the Repository and download the Netlist files for Simulation, enter the following commands in your terminal.
 ```
 sudo apt install -y git
-git clone https://github.com/Anmol-S314/iiitb_sync_fifo.git
-cd iiitb_sync_fifo
-iverilog iiitb_sync_fifo.v iiitb_sync_fifo_tb.v
+git clone https://github.com/Anmol-S314/iiitb_sfifo.git
+cd iiitb_sfifo
+iverilog iiitb_sfifo.v iiitb_sfifo_tb.v
 vvp a.out
 gtkwave FIFO_tb.vcd
 ```
@@ -106,13 +106,13 @@ yosys>  show
     <em>Gate Level Description of Verilog Code</em>
 </p>
 
-Now the synthesized netlist is written in ```iiitb_sync_fifo_synth.v``` file.
+Now the synthesized netlist is written in ```iiitb_sfifo_synth.v``` file.
 
 ## Gate Level Simulation
 GLS is generating the simulation output by running test bench with netlist file generated from synthesis as design under test. Netlist is logically same as RTL code, therefore, same test bench can be used for it.
 We perform this to verify logical correctness of the design after synthesizing it. Also ensuring the timing of the design is met. Folllowing are the commands to run the GLS simulation:
 ```
-iverilog -DFUNCTIONAL -DUNIT_DELAY=#0 ../iiitb_sync_fifo/verilog_model/primitives.v ../iiitb_sync_fifo/verilog_model/sky130_fd_sc_hd.v iiitb_sync_fifo_synth.v iiitb_sync_fifo_tb.v
+iverilog -DFUNCTIONAL -DUNIT_DELAY=#0 ../iiitb_sfifo/verilog_model/primitives.v ../iiitb_sfifo/verilog_model/sky130_fd_sc_hd.v iiitb_sfifo_synth.v iiitb_sfifo_tb.v
 ./a.out
 gtkwave dump.vcd
 ```
