@@ -1,6 +1,6 @@
 
 `timescale 1 ns/ 1 ps
-module iiitb_sync_fifo_tb();
+module iiitb_sfifo_tb();
 	reg CLK;
 	reg RSTn;
 	reg write;
@@ -59,7 +59,7 @@ begin
 end
 
 
-iiitb_sync_fifo fifo (.CLK(CLK),
+iiitb_sfifo fifo (.CLK(CLK),
 				  .RSTn(RSTn),
 				  .write(write),
 				  .read(read),
