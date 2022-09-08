@@ -1,15 +1,27 @@
 {
     "DESIGN_NAME": "iiitb_sfifo",
     "VERILOG_FILES": "dir::src/iiitb_sfifo.v",
-    "CLOCK_PORT": "clk",
-    "CLOCK_NET": "clk",
-    "FP_SIZING": "absolute",
-    "DIE_AREA": "0 0 1200 1200",
+    "CLOCK_PORT": "CLK",
+    "CLOCK_NET": "CLK",
+    "GLB_RESIZER_TIMING_OPTIMIZATIONS": true,
+    "CLOCK_PERIOD": 65,
+    "PL_RANDOM_GLB_PLACEMENT": 1,
+    "PL_TARGET_DENSITY": 0.7,
+    "FP_SIZING" : "relative",
     "pdk::sky130*": {
         "FP_CORE_UTIL": 13,
-        "CLOCK_PERIOD": 65,
         "scl::sky130_fd_sc_hd": {
             "FP_CORE_UTIL": 11
         }
-    }
+    },
+    
+    "LIB_SYNTH": "dir::src/sky130_fd_sc_hd__typical.lib",
+    "LIB_FASTEST": "dir::src/sky130_fd_sc_hd__fast.lib",
+    "LIB_SLOWEST": "dir::src/sky130_fd_sc_hd__slow.lib",
+    "LIB_TYPICAL": "dir::src/sky130_fd_sc_hd__typical.lib",  
+    "TEST_EXTERNAL_GLOB": "dir::../iiitb_sfifo/src/*",
+    "SYNTH_DRIVING_CELL":"sky130_vsdinv"
+    
+
+
 }
