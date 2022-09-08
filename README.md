@@ -264,7 +264,25 @@ Open terminal in home directory
    sudo make mount
   ./flow.tcl -design iiitb_sfifo
 ```
-### 7.7 Generating Layout with `sky130_vsdinv` cell
+To see the layout we use a tool called magic which we installed earlier.
+
+open terminal in home directory
+```
+$   cd OpenLane/designs/iiitb_sfifo/run
+$   ls
+```
+
+run following instruction
+```
+$   cd results/final/def
+```
+Place the command in the folder
+```
+$   magic -T /home/anmol/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../../tmp/merged.max.lef def read iiitb_sfifo.def &
+```
+layout will be open in new window
+
+### 7.6 Generating Layout with `sky130_vsdinv` cell
 
 #### Invoking OpenLane
 
@@ -309,7 +327,7 @@ Include the below command to include the additional lef (i.e sky130_vsdinv) into
 ```
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/188606148-5ad62e2f-923e-44e0-af82-3dce84857a8d.png" width="200"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/188606148-5ad62e2f-923e-44e0-af82-3dce84857a8d.png" width="500"  alt="accessibility text">
 </p>
 
 
@@ -326,19 +344,21 @@ to synthesize the code run the following command
 ```
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/188606274-f454be90-e552-47e5-807a-f6080cfe58c7.png" width="200"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/188606274-f454be90-e552-47e5-807a-f6080cfe58c7.png" width="500"  alt="accessibility text">
 </p>
 
 
-#### Statistics** after synthesis
+#### Statistics after synthesis
 
 > pre synthesis stat
-
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/78084271/189063338-9b459913-375c-4aa9-9650-006d37183e72.png" width="500"  alt="accessibility text">
+</p>
 
 
 > post synthesis stat
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/188606711-89224942-0e2d-4aa2-b752-6c2a5d0921aa.png" width="200"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/189063292-1d385148-981f-4b95-9b59-0f72dccddfc3.png" width="500"  alt="accessibility text">
 </p>
 
 
@@ -347,17 +367,21 @@ to synthesize the code run the following command
 
 Goal is to plan the silicon area and create a robust power distribution network (PDN) to power each of the individual components of the synthesized netlist. In addition, macro placement and blockages must be defined before placement occurs to ensure a legalized GDS file. In power planning we create the ring which is connected to the pads which brings power around the edges of the chip. We also include power straps to bring power to the middle of the chip using higher metal layers which reduces IR drop and electro-migration problem.
 
-run the folliwing command to run floorplan
+run the following command to run floorplan
 
 ```
 % run_floorplan
 ```
 
-<img 
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/78084271/189063525-5611fd6a-1011-4ff4-bb5e-b4f8e23b7960.png" width="500"  alt="accessibility text">
+</p>
 
 **floorplan**
 
-<img 
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/78084271/189063623-e50d04f6-d202-47f1-9ea9-005012fb2caf.png" width="500"  alt="accessibility text">
+</p>
 
 #### Placement
 Place the standard cells on the floorplane rows, aligned with sites defined in the technology lef file. Placement is done in two steps: Global and Detailed. In Global placement tries to find optimal position for all cells but they may be overlapping and not aligned to rows, detailed placement takes the global placement and legalizes all of the placements trying to adhere to what the global placement wants.
@@ -367,11 +391,17 @@ run the following command to run the placement
 ```
 % run_placement
 ```
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/78084271/189063735-11e2fee8-b1ac-4bd1-b35b-85bfe30d3774.png" width="500"  alt="accessibility text">
+</p>
 
 
 **layout after floorplan**
 
-<img 
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/78084271/189063883-6080b7ff-fa0c-4d17-9c1b-9a24a15eac63.png" width="500"  alt="accessibility text">
+</p>
+
 
 
 #### CTS
@@ -382,6 +412,9 @@ run the following command to perform CTS
 ```
 % run_cts
 ```
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/78084271/189064758-55ca83c7-acd4-48e0-adde-2ec714ae97a0.png" width="500"  alt="accessibility text">
+</p>
 
 
 #### Routing
@@ -393,40 +426,58 @@ run the following command to run the routing
 ```
 % run_routing
 ```
-<img 
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/78084271/189064130-a6fc41ac-800c-4120-8b10-698c1508c34f.png" width="500"  alt="accessibility text">
+</p>
+
 
 **layout after Routing**
 
-<img 
-<img 
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/78084271/189064307-571f880b-3062-47f9-90c0-60a20facee91.png" width="500"  alt="accessibility text">
+</p>
 
-### 7.8 Identifing custom made sky130_vsdinv
+
+### 7.7 Identifing custom made sky130_vsdinv
 
 in tkcon type the follow command to check where sky130_vsdinv exist or not
 ```
 % getcell sky130_vsdinv
 ```
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/188607345-ef0b6027-cb39-43d8-bf60-adef17eb6af4.png" width="700"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/189065823-30bc6df7-69d8-49a2-b69b-5af2b4eb8789.png" width="500"  alt="accessibility text">
 </p>
+**Cell after Placement**
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/188607383-dbfb35a5-06bd-449b-bb76-163b35c3783c.png" width="700"  alt="accessibility text">
-</p><p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/188607402-b42a4d25-aeef-4ce4-91ac-f513e5b3a26e.png" width="700"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/189065255-bcbdcef0-2ab2-4cca-ac7a-370130db65da.png" width="700"  alt="accessibility text">
 </p>
 
-## Placement
 
+**Cell after Routing**
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/188608010-e95ea7e8-9a52-4b52-94a3-f4b9c1841ae5.png" width="500"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/189065049-86cdbd14-13b5-4a7f-a796-12713bb08bc5.png" width="700"  alt="accessibility text">
 </p>
 
-## Routing
-
+### 7.8 Reports
+### Area
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/188607791-0ebb0353-9b89-4adc-a9aa-84dff73bc251.png" width="500"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/189065559-9dbd7773-d146-4607-a895-01596d58843b.png" width="500"  alt="accessibility text">
 </p>
 
+#### Slack
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/78084271/189065744-114ec046-ca39-4e78-bd29-fbc064d6fd26.png" width="500"  alt="accessibility text">
+</p>
+
+#### Die Area
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/78084271/189066152-e87e7931-6941-40c6-a12d-8fa52c1f4846.png" width="200"  alt="accessibility text">
+</p>
+
+#### Core Area
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/78084271/189066162-58931d96-4c98-4ded-8f2a-6844805c0e85.png" width="200"  alt="accessibility text">
+</p>
 
 
 ## Contributors
