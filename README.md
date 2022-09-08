@@ -377,10 +377,10 @@ run the following command to run floorplan
  <img src="https://user-images.githubusercontent.com/78084271/189063525-5611fd6a-1011-4ff4-bb5e-b4f8e23b7960.png" width="500"  alt="accessibility text">
 </p>
 
-**floorplan**
+**Layout after Floorplan**
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/189063623-e50d04f6-d202-47f1-9ea9-005012fb2caf.png" width="500"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/189063623-e50d04f6-d202-47f1-9ea9-005012fb2caf.png" width="850"  alt="accessibility text">
 </p>
 
 #### Placement
@@ -396,10 +396,10 @@ run the following command to run the placement
 </p>
 
 
-**layout after floorplan**
+**Layout after Placement**
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/189063883-6080b7ff-fa0c-4d17-9c1b-9a24a15eac63.png" width="500"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/189063883-6080b7ff-fa0c-4d17-9c1b-9a24a15eac63.png" width="850"  alt="accessibility text">
 </p>
 
 
@@ -431,10 +431,10 @@ run the following command to run the routing
 </p>
 
 
-**layout after Routing**
+**Layout after Routing**
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/189064307-571f880b-3062-47f9-90c0-60a20facee91.png" width="500"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/189064307-571f880b-3062-47f9-90c0-60a20facee91.png" width="850"  alt="accessibility text">
 </p>
 
 
@@ -447,15 +447,16 @@ in tkcon type the follow command to check where sky130_vsdinv exist or not
 <p align="center">
  <img src="https://user-images.githubusercontent.com/78084271/189065823-30bc6df7-69d8-49a2-b69b-5af2b4eb8789.png" width="500"  alt="accessibility text">
 </p>
+
 **Cell after Placement**
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/189065255-bcbdcef0-2ab2-4cca-ac7a-370130db65da.png" width="700"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/189065255-bcbdcef0-2ab2-4cca-ac7a-370130db65da.png" width="500"  alt="accessibility text">
 </p>
 
 
 **Cell after Routing**
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/189065049-86cdbd14-13b5-4a7f-a796-12713bb08bc5.png" width="700"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/189065049-86cdbd14-13b5-4a7f-a796-12713bb08bc5.png" width="500"  alt="accessibility text">
 </p>
 
 ### 7.8 Reports
@@ -471,12 +472,12 @@ in tkcon type the follow command to check where sky130_vsdinv exist or not
 
 #### Die Area
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/189066152-e87e7931-6941-40c6-a12d-8fa52c1f4846.png" width="200"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/189066152-e87e7931-6941-40c6-a12d-8fa52c1f4846.png" width="400"  alt="accessibility text">
 </p>
 
 #### Core Area
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/189066162-58931d96-4c98-4ded-8f2a-6844805c0e85.png" width="200"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/189066162-58931d96-4c98-4ded-8f2a-6844805c0e85.png" width="400"  alt="accessibility text">
 </p>
 
 
