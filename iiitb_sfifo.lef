@@ -1,0 +1,274 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO iiitb_sfifo
+  CLASS BLOCK ;
+  FOREIGN iiitb_sfifo ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 260.820 BY 271.540 ;
+  PIN CLK
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 212.610 267.540 212.890 271.540 ;
+    END
+  END CLK
+  PIN RSTn
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 119.230 267.540 119.510 271.540 ;
+    END
+  END RSTn
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 97.840 10.640 99.440 258.640 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 251.440 10.640 253.040 258.640 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 103.320 255.080 104.920 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 256.500 255.080 258.100 ;
+    END
+  END VGND
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 21.040 10.640 22.640 258.640 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 174.640 10.640 176.240 258.640 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 26.730 255.080 28.330 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 179.910 255.080 181.510 ;
+    END
+  END VPWR
+  PIN empty
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 256.820 221.040 260.820 221.640 ;
+    END
+  END empty
+  PIN full
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 256.820 71.440 260.820 72.040 ;
+    END
+  END full
+  PIN iData[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 70.930 267.540 71.210 271.540 ;
+    END
+  END iData[0]
+  PIN iData[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 197.240 4.000 197.840 ;
+    END
+  END iData[1]
+  PIN iData[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 98.640 4.000 99.240 ;
+    END
+  END iData[2]
+  PIN iData[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 256.820 20.440 260.820 21.040 ;
+    END
+  END iData[3]
+  PIN iData[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 186.850 0.000 187.130 4.000 ;
+    END
+  END iData[4]
+  PIN iData[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 0.090 0.000 0.370 4.000 ;
+    END
+  END iData[5]
+  PIN iData[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 257.690 267.540 257.970 271.540 ;
+    END
+  END iData[6]
+  PIN iData[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 45.170 0.000 45.450 4.000 ;
+    END
+  END iData[7]
+  PIN oData[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 235.150 0.000 235.430 4.000 ;
+    END
+  END oData[0]
+  PIN oData[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 93.470 0.000 93.750 4.000 ;
+    END
+  END oData[1]
+  PIN oData[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 47.640 4.000 48.240 ;
+    END
+  END oData[2]
+  PIN oData[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 256.820 170.040 260.820 170.640 ;
+    END
+  END oData[3]
+  PIN oData[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 248.240 4.000 248.840 ;
+    END
+  END oData[4]
+  PIN oData[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 164.310 267.540 164.590 271.540 ;
+    END
+  END oData[5]
+  PIN oData[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 138.550 0.000 138.830 4.000 ;
+    END
+  END oData[6]
+  PIN oData[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 146.240 4.000 146.840 ;
+    END
+  END oData[7]
+  PIN read
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 22.630 267.540 22.910 271.540 ;
+    END
+  END read
+  PIN write
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 256.820 122.440 260.820 123.040 ;
+    END
+  END write
+  OBS
+      LAYER li1 ;
+        RECT 5.520 10.795 254.840 258.485 ;
+      LAYER met1 ;
+        RECT 0.070 9.220 257.990 258.640 ;
+      LAYER met2 ;
+        RECT 0.100 267.260 22.350 268.330 ;
+        RECT 23.190 267.260 70.650 268.330 ;
+        RECT 71.490 267.260 118.950 268.330 ;
+        RECT 119.790 267.260 164.030 268.330 ;
+        RECT 164.870 267.260 212.330 268.330 ;
+        RECT 213.170 267.260 257.410 268.330 ;
+        RECT 0.100 4.280 257.960 267.260 ;
+        RECT 0.650 4.000 44.890 4.280 ;
+        RECT 45.730 4.000 93.190 4.280 ;
+        RECT 94.030 4.000 138.270 4.280 ;
+        RECT 139.110 4.000 186.570 4.280 ;
+        RECT 187.410 4.000 234.870 4.280 ;
+        RECT 235.710 4.000 257.960 4.280 ;
+      LAYER met3 ;
+        RECT 4.000 249.240 256.820 258.565 ;
+        RECT 4.400 247.840 256.820 249.240 ;
+        RECT 4.000 222.040 256.820 247.840 ;
+        RECT 4.000 220.640 256.420 222.040 ;
+        RECT 4.000 198.240 256.820 220.640 ;
+        RECT 4.400 196.840 256.820 198.240 ;
+        RECT 4.000 171.040 256.820 196.840 ;
+        RECT 4.000 169.640 256.420 171.040 ;
+        RECT 4.000 147.240 256.820 169.640 ;
+        RECT 4.400 145.840 256.820 147.240 ;
+        RECT 4.000 123.440 256.820 145.840 ;
+        RECT 4.000 122.040 256.420 123.440 ;
+        RECT 4.000 99.640 256.820 122.040 ;
+        RECT 4.400 98.240 256.820 99.640 ;
+        RECT 4.000 72.440 256.820 98.240 ;
+        RECT 4.000 71.040 256.420 72.440 ;
+        RECT 4.000 48.640 256.820 71.040 ;
+        RECT 4.400 47.240 256.820 48.640 ;
+        RECT 4.000 21.440 256.820 47.240 ;
+        RECT 4.000 20.040 256.420 21.440 ;
+        RECT 4.000 10.715 256.820 20.040 ;
+      LAYER met4 ;
+        RECT 23.295 11.735 97.440 235.785 ;
+        RECT 99.840 11.735 174.240 235.785 ;
+        RECT 176.640 11.735 244.425 235.785 ;
+  END
+END iiitb_sfifo
+END LIBRARY
+
