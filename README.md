@@ -505,8 +505,8 @@ sudo make mount
 sta
 % read_liberty -min /home/anmol/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/sky130_fd_sc_hd__slow.lib  
 % read_liberty -max /home/anmol/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/sky130_fd_sc_hd__fast.lib 
-% link_design iiitb_sfifo
 % read_verilog /home/anmol/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/iiitb_sfifo.resized.v
+% link_design iiitb_sfifo
 % read_sdc /home/anmol/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/iiitb_sfifo.sdc
 % read_spef /home/anmol/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/iiitb_sfifo.nom.spef
 % set_propagated_clock [all_clocks] 
@@ -514,10 +514,12 @@ sta
 % report_checks -from _0913_ -to full
 ```
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/192713144-fdc94196-d532-4180-86aa-cf7436159189.png" width="700"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/192721419-b9212ab0-1ac5-434c-bdb2-686621c4fabd.png" width="700"  alt="accessibility text">
 </p>
 
-**Performance = 1/(clk_period - slack) = 1/(65.00 - 49.78)ns = 65.703 MHz.**
+
+
+**Performance = 1/(clk_period - slack) = 1/(65.00 - 50.29)ns = 67.980 MHz.**
 
 ### 4. Flop/Standard Cell Ratio
 
@@ -528,14 +530,14 @@ sta
 **Flop Ratio = Total No of Flip Flops / Total No of Cells = 128/600 = 0.213**
 Here we inspect the `sky130_fd_sc_hd__dfxtp_2` cell to get the Flop-Ratio.
 
-### Power (Total, Internal, Switching, Leakage)
+### 5. Power (Total, Internal, Switching, Leakage)
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/192714936-adf38dea-2c33-4188-815e-bb0328cb9a55.png" width="700"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/192721785-432ff87f-db1b-4b71-aa70-870d3dcef5d3.png" width="700"  alt="accessibility text">
 </p>
 
-**Internal Power = 142 uW (62.1%)**
+**Internal Power = 142 uW (62.2%)**
 
-**Switching Power = 86.3 mW (37.9%)**
+**Switching Power = 86 mW (37.8%)**
 
 **Leakage Power = 4.10 nW (0.00%)**
 
