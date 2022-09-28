@@ -528,8 +528,8 @@ sta
 </p>
 
 
-**Flop Ratio = Total No of Flip Flops / Total No of Cells = 128/600 = 0.213**
-Here we inspect the `sky130_fd_sc_hd__dfxtp_2` cell to get the Flop-Ratio.
+**Flop Ratio = Total No of Flip Flops / Total No of Cells = (128+18)/600 = 0.243**
+Here we inspect the `sky130_fd_sc_hd__dfxtp_2` and `sky130_fd_sc_hd__dfrtp_2` cells to get the Flop-Ratio.
 
 ### 5. Power (Total, Internal, Switching, Leakage)
 <p align="center">
