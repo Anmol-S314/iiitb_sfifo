@@ -524,8 +524,9 @@ sta
 ### 4. Flop/Standard Cell Ratio
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/192714146-7f75e31e-e7b5-4da8-ac02-4e5a2a84032d.png" width="700"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/192724044-ffed8771-227d-4a73-9157-7b8d8876db86.png" width="700"  alt="accessibility text">
 </p>
+
 
 **Flop Ratio = Total No of Flip Flops / Total No of Cells = 128/600 = 0.213**
 Here we inspect the `sky130_fd_sc_hd__dfxtp_2` cell to get the Flop-Ratio.
