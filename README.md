@@ -524,7 +524,7 @@ sta
 ### 4. Flop/Standard Cell Ratio
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/192724044-ffed8771-227d-4a73-9157-7b8d8876db86.png" width="700"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/192726662-75157dd3-a129-4e74-8e42-25289601ff91.png" width="700"  alt="accessibility text">
 </p>
 
 
