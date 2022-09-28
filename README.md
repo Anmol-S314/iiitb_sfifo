@@ -537,7 +537,7 @@ Here we inspect the `sky130_fd_sc_hd__dfxtp_2` cell to get the Flop-Ratio.
 
 **Internal Power = 142 uW (62.2%)**
 
-**Switching Power = 86 mW (37.8%)**
+**Switching Power = 86 uW (37.8%)**
 
 **Leakage Power = 4.10 nW (0.00%)**
 
