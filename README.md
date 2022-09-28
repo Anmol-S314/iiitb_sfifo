@@ -484,18 +484,19 @@ in tkcon type the follow command to check where sky130_vsdinv exist or not
 ### 1. Post Layout Synthesis Gate Count
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/192711104-0468db72-b0e0-49be-8a7c-744099b6a7aa.png" width="400"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/192711104-0468db72-b0e0-49be-8a7c-744099b6a7aa.png" width="700"  alt="accessibility text">
 </p>
-Gate Count = 600
+
+**Gate Count = 600**
 
 
 ### 2. Area (Box command)
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/192711437-cb4bbfba-a1d0-4d57-907d-32940e98f2a3.png" width="400"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/192711437-cb4bbfba-a1d0-4d57-907d-32940e98f2a3.png" width="700"  alt="accessibility text">
 </p>
 
-Area = 70,823.062 um2
+**Area = 70,823.062 um2**
 
 ### 3. Performance
 Copy the lib files along with the .v and .sdc files from /results/routing and /results/cts respectively in the `sky130_fd_sc_hd` sub-directory present in OpenLane and run the following commands in your working OpenLane directory.
@@ -513,29 +514,32 @@ sta
 % report_checks -from _0913_ -to full
 ```
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/192713144-fdc94196-d532-4180-86aa-cf7436159189.png" width="400"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/192713144-fdc94196-d532-4180-86aa-cf7436159189.png" width="700"  alt="accessibility text">
 </p>
 
-Performance = 1/(clk_period - slack) = 1/(65.00 - 49.78)ns = 65.703 MHz.
+**Performance = 1/(clk_period - slack) = 1/(65.00 - 49.78)ns = 65.703 MHz.**
 
 ### 4. Flop/Standard Cell Ratio
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/192714146-7f75e31e-e7b5-4da8-ac02-4e5a2a84032d.png" width="400"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/192714146-7f75e31e-e7b5-4da8-ac02-4e5a2a84032d.png" width="700"  alt="accessibility text">
 </p>
 
-Flop Ratio = Total No of Flip Flops / Total No of Cells = 128/600 = 0.213
+**Flop Ratio = Total No of Flip Flops / Total No of Cells = 128/600 = 0.213**
 Here we inspect the `sky130_fd_sc_hd__dfxtp_2` cell to get the Flop-Ratio.
 
 ### Power (Total, Internal, Switching, Leakage)
 <p align="center">
- <img src="https://user-images.githubusercontent.com/78084271/192714936-adf38dea-2c33-4188-815e-bb0328cb9a55.png" width="400"  alt="accessibility text">
+ <img src="https://user-images.githubusercontent.com/78084271/192714936-adf38dea-2c33-4188-815e-bb0328cb9a55.png" width="700"  alt="accessibility text">
 </p>
 
-Internal Power = 142 uW (62.1%)
-Switching Power = 86.3 mW (37.9%)
-Leakage Power = 4.10 nW (0.00%)
-Total Power = 228 uW (100%) 
+**Internal Power = 142 uW (62.1%)**
+
+**Switching Power = 86.3 mW (37.9%)**
+
+**Leakage Power = 4.10 nW (0.00%)**
+
+**Total Power = 228 uW (100%)** 
 
 
 
