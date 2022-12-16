@@ -60,7 +60,7 @@ git clone https://github.com/Anmol-S314/iiitb_sfifo.git
 cd iiitb_sfifo
 iverilog iiitb_sfifo.v iiitb_sfifo_tb.v
 vvp a.out
-gtkwave FIFO_tb.vcd
+gtkwave dump.vcd
 ```
 ### 4.5 Functional Characteristics
 <p align="center">
