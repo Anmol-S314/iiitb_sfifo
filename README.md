@@ -260,10 +260,12 @@ Open terminal in home directory
    mkdir src
    cd src/
    wget https://raw.githubusercontent.com/Anmol-S314/iiitb_sfifo/main/iiitb_sfifo.v
+   wget https://raw.githubusercontent.com/Anmol-S314/iiitb_sfifo/main/src
    cd ../../../
    sudo make mount
   ./flow.tcl -design iiitb_sfifo
 ```
+Add the files from the src folder and the netlist into the src folder of OpenLane.
 To see the layout we use a tool called magic which we installed earlier.
 
 open terminal in home directory
